@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Todo | Spring Boot Todo App</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#2563eb,#4f46e5);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            width:100%;
+            max-width:500px;
+            background:#fff;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 15px 35px rgba(0,0,0,.2);
+        }
+
+        h1{
+            text-align:center;
+            color:#2563eb;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#666;
+            margin-bottom:30px;
+        }
+
+        .form-group{
+            margin-bottom:20px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#333;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="date"]{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+        textarea{
+            resize:vertical;
+            min-height:120px;
+        }
+
+        .btn{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:8px;
+            background:#2563eb;
+            color:white;
+            font-size:17px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .btn:hover{
+            background:#1d4ed8;
+        }
+
+        .back{
+            display:block;
+            text-align:center;
+            margin-top:20px;
+            text-decoration:none;
+            color:#2563eb;
+            font-weight:bold;
+        }
+
+        .back:hover{
+            text-decoration:underline;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Create Todo</h1>
+
+    <p class="subtitle">
+        Add a new task to your Todo list and stay organized.
+    </p>
+
+    <form action="/saveTodo" method="post">
+
+        <div class="form-group">
+            <label>Todo Title</label>
+            <input type="text"
+                   name="title"
+                   placeholder="Enter todo title"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea
+                    name="description"
+                    placeholder="Write your task details..."
+                    required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Due Date</label>
+            <input type="date"
+                   name="dueDate">
+        </div>
+
+        <button class="btn" type="submit">
+            ➕ Create Todo
+        </button>
+
+    </form>
+
+    <a href="/" class="back">⬅ Back to Home</a>
+
+</div>
+
+</body>
+</html>
